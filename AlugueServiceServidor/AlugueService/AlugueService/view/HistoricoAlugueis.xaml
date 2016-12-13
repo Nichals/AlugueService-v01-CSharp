@@ -1,0 +1,53 @@
+﻿<Window x:Class="AlugueService.HistoricoAlugueis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlugueService"
+        mc:Ignorable="d"
+        Title="Historico alugueis" Height="385.5" Width="1115.5" Icon="/AlugueService;component/images/alugueService.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="1110">
+            <MenuItem Header="Menu">
+                <MenuItem Header="Voltar" Click="MenuItemVoltar_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/AlugueService;component/images/voltar.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Label x:Name="label" Content="Histórico de alugueis:" HorizontalAlignment="Left" Margin="7,25,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dgHistorico" HorizontalAlignment="Left" Margin="12,52,0,0" VerticalAlignment="Top" Height="244" Width="1072" ItemsSource="{Binding listaAlugueis}" AutoGenerateColumns="False" IsReadOnly="True" AlternatingRowBackground="PapayaWhip" CanUserResizeColumns="False" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID ALUGUEL" Binding="{Binding IdAluguel}" Width="25"/>
+                <DataGridTextColumn Header="ID CLIENTE" Binding="{Binding IdCliente}" Width="70"/>
+                <DataGridTextColumn Header="ID OPERADOR" Binding="{Binding IdOperador}" Width="88"/>
+                <DataGridTextColumn Header="CONFIGURAÇÃO" Binding="{Binding IdConf}" Width="100"/>
+                <DataGridTextColumn Header="ID CUPOM" Binding="{Binding IdCupom}" Width="70"/>
+                <DataGridTextColumn Header="DATA ALUGUEL" Binding="{Binding DataAluguel, StringFormat=d, ConverterCulture=pt-BR}" Width="95"/>
+                <DataGridTextColumn Header="DATA PREVISTA" Binding="{Binding DataPrevista, StringFormat=d, ConverterCulture=pt-BR}" Width="95"/>
+                <DataGridTextColumn Header="DATA ENTREGA" Binding="{Binding DataEntrega, StringFormat=d, ConverterCulture=pt-BR}" Width="95"/>
+                <DataGridTextColumn Header="STATUS" Binding="{Binding StatusAux}" Width="60">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="Finalizado">
+                                    <Setter Property="Background" Value="SkyBlue"/>
+                                </Trigger>
+                                <Trigger Property="Text" Value="Cancelado">
+                                    <Setter Property="Background" Value="LightCoral"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="DIAS DE MULTA" Binding="{Binding QtMulta}" Width="95"/>
+                <DataGridTextColumn Header="VALOR ALUGUEL" Binding="{Binding ValorAluguel, StringFormat=C, ConverterCulture=pt-BR}" Width="100"/>
+                <DataGridTextColumn Header="VALOR MULTA" Binding="{Binding ValorMulta, StringFormat=C, ConverterCulture=pt-BR}" Width="90"/>
+                <DataGridTextColumn Header="VALOR TOTAL" Binding="{Binding ValorTotal, StringFormat=C, ConverterCulture=pt-BR}" Width="90"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_Detalhes" Content="Detalhes" HorizontalAlignment="Left" Margin="41,308,0,0" VerticalAlignment="Top" Width="126" Click="btn_Detalhes_Click"/>
+
+    </Grid>
+</Window>

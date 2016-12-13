@@ -1,0 +1,39 @@
+﻿<Window x:Class="AlugueService.view.DetalhesAluguel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlugueService.view"
+        mc:Ignorable="d"
+        Title="Detalhes aluguel" Height="376" Width="452" ResizeMode="NoResize" Icon="/AlugueService;component/images/alugueService.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="272" Margin="6,55,0,0" Stroke="Black" VerticalAlignment="Top" Width="416"/>
+
+
+        <Menu HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="446">
+            <MenuItem Header="Menu">
+                <MenuItem Header="Voltar" Click="MenuItemVoltar_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/AlugueService;component/images/voltar.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBlock x:Name="tblockIdAluguel" HorizontalAlignment="Left" Margin="33,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="ID:" HorizontalAlignment="Left" Margin="7,19,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Data aluguel:" HorizontalAlignment="Left" Margin="78,19,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="Valor aluguel:" HorizontalAlignment="Left" Margin="245,19,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblockData" HorizontalAlignment="Left" Margin="155,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblockIdValor" HorizontalAlignment="Left" Margin="324,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Net, StringFormat=c}"/>
+        <DataGrid x:Name="dgDetalhe" HorizontalAlignment="Left" Margin="12,81,0,0" VerticalAlignment="Top" Height="240" Width="404" AutoGenerateColumns="False" IsEnabled="True" AlternatingRowBackground="PapayaWhip" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False"  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" Width="25" TextBlock.TextAlignment="Center"/>
+                <DataGridTextColumn Header="VALOR" Binding="{Binding Valor, ConverterCulture=pt-BR, StringFormat=C}" Width="65" TextBlock.TextAlignment="Left" />
+                <DataGridTextColumn Header="NOME" Binding="{Binding Nome}" Width="278"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="label1" Content="Lista de produtos:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.842,0.231"/>
+
+
+    </Grid>
+</Window>

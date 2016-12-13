@@ -1,0 +1,92 @@
+﻿<Window x:Class="AlugueService.CadastrarOperador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlugueService"
+        mc:Ignorable="d"
+        Title="Cadastrar operador" Height="260" Width="590" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/AlugueService;component/images/alugueService.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <PasswordBox x:Name="pbSenhaOperador" MaxLength="10" HorizontalAlignment="Left" Margin="302,45,0,0" VerticalAlignment="Top" Width="84" Height="19"/>
+
+        <Menu HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="585" Margin="0,0,-1,0">
+            <MenuItem Header="Menu">
+                <MenuItem Header="Voltar" Click="MenuItemVoltar_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/AlugueService;component/images/voltar.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Label x:Name="label" Content="*Nome:" HorizontalAlignment="Left" Margin="5,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="*Sobrenome:" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="*Telefone:" HorizontalAlignment="Left" Margin="5,91,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="*Celular:" HorizontalAlignment="Left" Margin="5,116,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy3" Content="*CPF:" HorizontalAlignment="Left" Margin="5,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy4" Content="*Numero:" HorizontalAlignment="Left" Margin="236,91,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy5" Content="*Cidade:" HorizontalAlignment="Left" Margin="236,116,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy6" HorizontalAlignment="Left" Margin="154,153,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy8" Content="*Rua:" HorizontalAlignment="Left" Margin="236,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy9" Content="*Bairro:" HorizontalAlignment="Left" Margin="350,91,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNomeOperador" MaxLength="60" HorizontalAlignment="Left" Height="19" Margin="87,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" />
+        <TextBox x:Name="tbSobrenomeOperador" MaxLength="60" HorizontalAlignment="Left" Height="19" Margin="87,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="tbTelefoneOperador" MaxLength="13" HorizontalAlignment="Left" Height="19" Margin="87,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="tbCelularOperador" MaxLength="14" HorizontalAlignment="Left" Height="19" Margin="87,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="tbCPFOperador" MaxLength="14" HorizontalAlignment="Left" Height="19" Margin="87,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="label_Copy7" Content="*CEP:" HorizontalAlignment="Left" Margin="236,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="* CAMPOS OBRIGATORIOS" HorizontalAlignment="Left" Margin="5,19,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBox x:Name="tbRuaOperador" MaxLength="60" HorizontalAlignment="Left" Height="19" Margin="302,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246"/>
+        <TextBox x:Name="tbNumeroOperador" MaxLength="10" HorizontalAlignment="Left" Height="19" Margin="302,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="tbBairroOperador" MaxLength="60" HorizontalAlignment="Left" Height="19" Margin="398,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbCidadeOperador" HorizontalAlignment="Left" Margin="302,121,0,0" VerticalAlignment="Top" Width="150" Height="19">
+            <ComboBoxItem Content = "Adrianópolis"/>
+            <ComboBoxItem Content = "Agudos do Sul"/>
+            <ComboBoxItem Content = "Almirante Tamandaré"/>
+            <ComboBoxItem Content = "Araucária"/>
+            <ComboBoxItem Content = "Balsa Nova"/>
+            <ComboBoxItem Content = "Bocaiuva do Sul"/>
+            <ComboBoxItem Content = "Campina Grande do Sul"/>
+            <ComboBoxItem Content = "Campo do Tenente"/>
+            <ComboBoxItem Content = "Campo Largo"/>
+            <ComboBoxItem Content = "Campo Magro"/>
+            <ComboBoxItem Content = "Cerro Azul"/>
+            <ComboBoxItem Content = "Colombo"/>
+            <ComboBoxItem Content = "Contenda"/>
+            <ComboBoxItem Content = "Curitiba"/>
+            <ComboBoxItem Content = "Doutor Ulysses"/>
+            <ComboBoxItem Content = "Fazenda Rio Grande"/>
+            <ComboBoxItem Content = "Itaperuçu"/>
+            <ComboBoxItem Content = "Lapa"/>
+            <ComboBoxItem Content = "Mandirituba"/>
+            <ComboBoxItem Content = "Piên"/>
+            <ComboBoxItem Content = "Pinhais"/>
+            <ComboBoxItem Content = "Piraquara"/>
+            <ComboBoxItem Content = "Quatro Barras"/>
+            <ComboBoxItem Content = "Quitandinha"/>
+            <ComboBoxItem Content = "Rio Branco do Sul"/>
+            <ComboBoxItem Content = "Rio Negro"/>
+            <ComboBoxItem Content = "São José dos Pinhais"/>
+            <ComboBoxItem Content = "Tijucas do Sul"/>
+            <ComboBoxItem Content = "Tunas do Paraná"/>
+        </ComboBox>
+        <TextBox x:Name="tbCEPOperador" MaxLength="9" HorizontalAlignment="Left" Height="19" Margin="302,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65"/>
+        <Button x:Name="btnLimpar" Content="Limpar campos" HorizontalAlignment="Left" Margin="96,186,0,0" VerticalAlignment="Top" Width="104" Click="btnLimpar_Click"/>
+        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="328,186,0,0" VerticalAlignment="Top" Width="104" Click="btnCadastrar_Click"/>
+        <Label x:Name="label_Copy10" Content="*Senha:" HorizontalAlignment="Left" Margin="236,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="*Acesso:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="397,142,0,0"/>
+        <ComboBox x:Name="cbAcessos" HorizontalAlignment="Left" Margin="454,144,0,0" VerticalAlignment="Top" Width="92">
+            <ComboBoxItem Content="ADM"/>
+            <ComboBoxItem Content="CAIXA"/>
+        </ComboBox>
+        <Label x:Name="label3" Content="(?)" HorizontalAlignment="Left" Margin="214,91,0,0" VerticalAlignment="Top" ToolTip="Ex: (XX)XXXX-XXXX" Cursor="Help"/>
+        <Label x:Name="label3_Copy" Content="(?)" HorizontalAlignment="Left" Margin="214,116,0,0" VerticalAlignment="Top" ToolTip="Ex: (XX)XXXX-XXXX ou (XX)XXXXX-XXXX" Cursor="Help"/>
+        <Label x:Name="label3_Copy1" Content="(?)" HorizontalAlignment="Left" Margin="214,142,0,0" VerticalAlignment="Top" ToolTip="Ex: 000.000.000-00" Cursor="Help"/>
+        <Label x:Name="label3_Copy2" Content="(?)" HorizontalAlignment="Left" Margin="384,40,0,0" VerticalAlignment="Top" ToolTip="Deve conter de 4 à 10 caracteres. Não são aceitos caracteres especiais." Cursor="Help"/>
+        <Label x:Name="label3_Copy3" Content="(?)" HorizontalAlignment="Left" Margin="363,141,0,0" VerticalAlignment="Top" ToolTip="Ex: 00000-000" Cursor="Help"/>
+        <CheckBox x:Name="CheckSenha" Content="Visualizar senha" HorizontalAlignment="Left" Margin="412,47,0,0" VerticalAlignment="Top" Checked="CheckSenha_Checked" Unchecked="CheckSenha_Unchecked"/>
+        <TextBox x:Name="tbSenha" MaxLength="10" HorizontalAlignment="Left" Margin="302,45,0,0" VerticalAlignment="Top" Width="84" Height="19" TextWrapping="Wrap" Visibility="Collapsed" />
+    </Grid>
+</Window>

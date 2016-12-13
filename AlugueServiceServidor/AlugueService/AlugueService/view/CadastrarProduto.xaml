@@ -1,0 +1,46 @@
+﻿<Window x:Class="AlugueService.CadastrarProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlugueService"
+        mc:Ignorable="d"
+        Title="Cadastrar produto" Height="220" Width="601.5" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/AlugueService;component/images/alugueService.ico">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="595">
+            <MenuItem Header="Menu">
+                <MenuItem Header="Voltar" Click="MenuItemVoltar_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/AlugueService;component/images/voltar.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Label x:Name="label" Content="*Nome:" HorizontalAlignment="Left" Margin="5,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Descrição:" HorizontalAlignment="Left" Margin="265,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="*Tamanho:" HorizontalAlignment="Left" Margin="5,65,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNomeProduto" HorizontalAlignment="Left" Height="19" Margin="70,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" MaxLength="60"/>
+        <ComboBox x:Name="cbTamanhoProduto" HorizontalAlignment="Left" Margin="70,70,0,0" VerticalAlignment="Top" Width="77" Height="19">
+            <ComboBoxItem Content="PP"/>
+            <ComboBoxItem Content="P"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="G"/>
+            <ComboBoxItem Content="GG"/>
+            <ComboBoxItem Content="EG"/>
+            <ComboBoxItem Content="ÚNICO"/>
+        </ComboBox>
+        <TextBox x:Name="tbDescricaoProduto" HorizontalAlignment="Left" Height="69" Margin="334,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" MaxLength="1000"/>
+        <Label x:Name="label1" Content="* CAMPOS OBRIGATORIOS" HorizontalAlignment="Left" Margin="5,19,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Label x:Name="label_Copy10" Content="*Gênero:" HorizontalAlignment="Left" Margin="152,65,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbGeneroProduto" HorizontalAlignment="Left" Margin="209,70,0,0" VerticalAlignment="Top" Width="50" Height="19">
+            <ComboBoxItem Content="F"/>
+            <ComboBoxItem Content="M"/>
+        </ComboBox>
+        <Label x:Name="label_Copy2" Content="*Valor:" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbValorProduto" HorizontalAlignment="Left" Height="19" Margin="70,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" MaxLength="7"/>
+        <Label x:Name="label_Copy3" Content="R$" HorizontalAlignment="Left" Margin="116,92,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnLimpar" Content="Limpar campos" HorizontalAlignment="Left" Margin="112,136,0,0" VerticalAlignment="Top" Width="104" Click="btnLimpar_Click"/>
+        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="344,136,0,0" VerticalAlignment="Top" Width="104" Click="btnCadastrar_Click"/>
+        <Label x:Name="label2" Content="(?)" HorizontalAlignment="Left" Margin="134,91,0,0" VerticalAlignment="Top" ToolTip="Valores sempre digitados com ,00 no final. Ex: 100,00" Cursor="Help"/>
+    </Grid>
+</Window>

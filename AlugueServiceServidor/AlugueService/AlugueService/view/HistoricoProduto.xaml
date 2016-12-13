@@ -1,0 +1,22 @@
+﻿<Window x:Class="AlugueService.view.HistoricoProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Historico de edição dos produtos" Height="300" Width="1094.739" BorderBrush="Red" ResizeMode="NoResize" Icon="/AlugueService;component/images/alugueService.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Logs:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dgHistoricoProdutos" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="186" Width="1054" ItemsSource="{Binding listaHistoricoProdutos}" AutoGenerateColumns="False" IsReadOnly="True" AlternatingRowBackground="PapayaWhip" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdProduto}" Width="25" TextBlock.TextAlignment="Center"/>
+                <DataGridTextColumn Header="VALOR" Binding="{Binding Valor, StringFormat=C, ConverterCulture=pt-BR}" Width="65" TextBlock.TextAlignment="Left" />
+                <DataGridTextColumn Header="NOME" Binding="{Binding Nome}" Width="278"/>
+                <DataGridTextColumn Header="DESCRIÇÃO" Binding="{Binding Descricao}" Width="350"/>                
+                <DataGridTextColumn Header="TAMANHO" Binding="{Binding Tamanho}" Width="70"/>
+                <DataGridTextColumn Header="GÊNERO" Binding="{Binding Genero}" Width="55"/>
+                <DataGridTextColumn Header="STATUS" Binding="{Binding StatusAux}" Width="52"/>
+                <DataGridTextColumn Header="DATA DA ALTERAÇÃO" Binding="{Binding Data}" Width="130"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
+
+    </Grid>
+</Window>

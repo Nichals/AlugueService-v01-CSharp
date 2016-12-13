@@ -1,0 +1,50 @@
+﻿<Window x:Class="AlugueService.ConsultarOperador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlugueService"
+        mc:Ignorable="d"
+                Title="Consultar operador" Height="400" Width="639.75" Icon="/AlugueService;component/images/alugueService.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="634">
+            <MenuItem Header="Menu">
+                <MenuItem Header="Voltar" Click="MenuItemVoltar_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/AlugueService;component/images/voltar.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Label x:Name="label" Content="Nome:" HorizontalAlignment="Left" Margin="365,28,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNomePesquisa" HorizontalAlignment="Left" Height="19" Margin="412,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="PapayaWhip" KeyDown="tbNomePesquisa_KeyDown" MaxLength="60"/>
+        <Button x:Name="btnPesquisar" Content="Pesquisar" HorizontalAlignment="Left" Margin="537,32,0,0" VerticalAlignment="Top" Width="75" Click="btnPesquisar_Click" Height="19"/>
+        <DataGrid x:Name="dgOperador" HorizontalAlignment="Left" Margin="14,56,0,0" VerticalAlignment="Top" Width="598" Height="273" ItemsSource="{Binding listaOperadores}" AutoGenerateColumns="False" IsReadOnly="True" AlternatingRowBackground="PapayaWhip" CanUserResizeColumns="False" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdOperador}" Width="25"/>
+                <DataGridTextColumn Header="NOME" Binding="{Binding Nome}" Width="150"/>
+                <DataGridTextColumn Header="SOBRENOME" Binding="{Binding Sobrenome}" Width="200"/>
+                <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="90"/>
+                <DataGridTextColumn Header="NÍVEL" Binding="{Binding Nivel}" Width="60"/>
+                <DataGridTextColumn Header="STATUS" Binding="{Binding StatusAux}" Width="60">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="Ativo">
+                                    <Setter Property="Background" Value="LightGreen"/>
+                                </Trigger>
+                                <Trigger Property="Text" Value="Inativo">
+                                    <Setter Property="Background" Value="LightCoral"/>
+                                </Trigger>
+                              </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="429,334,0,0" VerticalAlignment="Top" Width="75" Click="btnEditar_Click"/>
+        <Button x:Name="btnDesativar" Content="Desativar/Ativar" HorizontalAlignment="Left" Margin="516,334,0,0" VerticalAlignment="Top" Width="96" Click="btnDesativar_Click"/>
+        <Button x:Name="btnAtualizar" Content="Atualizar" HorizontalAlignment="Left" Margin="14,334,0,0" VerticalAlignment="Top" Width="75" Click="btnAtualizar_Click"/>
+        
+    </Grid>
+</Window>
